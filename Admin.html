@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Panel de Administración - Extraescolares</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #eef1f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #343a40;
+      color: white;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 2rem auto;
+      background-color: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #333;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 1rem;
+    }
+
+    select {
+      width: 100%;
+      padding: 0.6rem;
+      margin-top: 0.5rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .info-box {
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background-color: #f8f9fa;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+
+    .info-box h3 {
+      margin-top: 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+
+    th, td {
+      padding: 0.6rem;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f1f1f1;
+    }
+  </style>
+  <script>
+    function mostrarInformacion() {
+      const actividad = document.getElementById('extraescolar').value;
+      const secciones = document.querySelectorAll('.info-box');
+      secciones.forEach(section => section.style.display = 'none');
+
+      if (actividad) {
+        document.getElementById(actividad).style.display = 'block';
+      }
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Panel de Administración - Extraescolares</h1>
+  </header>
+
+  <main>
+    <label for="extraescolar">Selecciona una actividad:</label>
+    <select id="extraescolar" onchange="mostrarInformacion()">
+      <option value="">-- Selecciona --</option>
+      <option value="futbol">Fútbol</option>
+      <option value="robotica">Robótica</option>
+      <option value="ballet">Ballet</option>
+    </select>
+
+    <!-- Fútbol -->
+    <div id="futbol" class="info-box" style="display: none;">
+      <h3>Fútbol</h3>
+      <p><strong>Maestro:</strong> Prof. Juan Pérez</p>
+      <p><strong>Horario:</strong> Lunes y Miércoles - 16:00 a 17:30</p>
+      <h4>Alumnos Inscritos:</h4>
+      <table>
+        <tr><th>Nombre</th><th>Edad</th><th>Asistencias</th></tr>
+        <tr><td>Ana López</td><td>12</td><td>8/10</td></tr>
+        <tr><td>Marco Díaz</td><td>13</td><td>9/10</td></tr>
+      </table>
+    </div>
+
+    <!-- Robótica -->
+    <div id="robotica" class="info-box" style="display: none;">
+      <h3>Robótica</h3>
+      <p><strong>Maestra:</strong> Ing. Laura Martínez</p>
+      <p><strong>Horario:</strong> Martes y Jueves - 15:30 a 17:00</p>
+      <h4>Alumnos Inscritos:</h4>
+      <table>
+        <tr><th>Nombre</th><th>Edad</th><th>Asistencias</th></tr>
+        <tr><td>David Torres</td><td>14</td><td>10/10</td></tr>
+        <tr><td>Lucía Herrera</td><td>13</td><td>9/10</td></tr>
+      </table>
+    </div>
+
+    <!-- Ballet -->
+    <div id="ballet" class="info-box" style="display: none;">
+      <h3>Ballet</h3>
+      <p><strong>Maestra:</strong> Lic. Mariana Ruiz</p>
+      <p><strong>Horario:</strong> Viernes - 16:00 a 18:00</p>
+      <h4>Alumnos Inscritos:</h4>
+      <table>
+        <tr><th>Nombre</th><th>Edad</th><th>Asistencias</th></tr>
+        <tr><td>Valentina Soto</td><td>11</td><td>7/10</td></tr>
+        <tr><td>Paula Gómez</td><td>12</td><td>10/10</td></tr>
+      </table>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,394 @@
+body{
+    margin: auto;
+    background-color: white;
+}
+nav {
+    position: fixed;
+    width: 100%;
+    background-color: #FF6600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+}
+nav ul li{
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    padding-right: 32px;
+    padding-left: 32px;
+    height: 86px;
+    width: fit-content;
+    display: inline;
+    display: flex;
+    align-items: center;
+}
+nav ul li a:hover{
+    text-decoration: underline;
+}
+.li1, .li2, .li3{
+    text-decoration: none;
+    border-style: solid;
+    border-color: black;
+    border-right-width: 1px;
+    border-left-width: 1px;
+    border-top: 0;
+    border-bottom: 0;
+}
+.li1 a, .li2 a, .li3 a{
+    text-decoration: none;
+    color:white;
+}
+.li2{
+    border-right-width: 1px;
+    border-left-width: 0px;
+}
+.li3{
+    border-right-width: 1px;
+    border-left-width: 0px;
+}
+nav ul{
+    margin: 0;
+    display: flex;
+    text-align: center;
+    margin-right: 40px;
+}
+.logo {
+    display: block;
+    background-color: white;
+    border-color: #e4e6e8;
+    border-style: solid;
+    border-width: 3px;
+    height: 80px;
+}
+.principal{
+    display: flex;
+    background-color: white;
+    width: 100%;
+    height: 800px;
+    bottom: 400px;
+    align-items: center;
+    justify-content: space-around;
+}
+.texto-principal{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.texto-principal h1{
+    margin: 0;
+    font-size: 40px;
+    font-size: 70px;
+    color: #ff6400;
+}
+.texto-principal h2{
+    margin: 0;
+    font-size: 50px;
+}
+.texto-principal h3{
+    margin: 0;
+    font-size: 30px;
+    color: #ff8f00;
+}
+.parrafo{
+    color: #4b0000;
+    font-size: 20px;
+    margin: 0;
+}
+.tema{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 0px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    width: 100%;
+    height: 400px;
+    background-color: #05002b;
+}
+.tema2{
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 0px;
+    width: 100%;
+    height: 334px;  
+}
+.tema2-1{
+    text-decoration: none;
+    color: white;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: end;
+    background-color: #0c46da;
+    padding: 40px;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+}
+.tema2-2{
+    text-decoration: none;
+    color: white;
+    width: 27%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #970cda;
+    padding: 40px;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+}
+.tema2-3{
+    text-decoration: none;
+    color: white;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 40px;
+    background-color: #c174e6;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    border-left-width: 0px;
+}
+.tema2-1:hover{
+    background-color: white;
+    color: black;
+}
+.tema2-2:hover{
+    background-color: white;
+    color: black;
+}
+.tema2-3:hover{
+    background-color: white;
+    color: black;
+}
+.tema2-1 div, .tema2-2 div, .tema2-3 div{
+    width: 350px;
+}
+.tema h1{
+    margin: 0;
+    font-size: 100px;
+}
+.tema button, .tema a {
+    font-size: 30px;
+    width: 250px;
+    height: 80px;
+    background-color: #47cc5e;
+    border: 0;
+    border-radius: 100px;
+}
+.tema button:hover{
+    background-color: white;
+    color: #05002b;
+    cursor: pointer;
+}
+.tema3{
+    margin: 0;
+    background-color: white;
+    width: 100%;
+    height: 548px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-color: #05002b;
+    border-style: solid;
+    border-width: 0;
+    border-bottom-width: 1px;
+}
+.tema3 h1{
+    font-size: 120px;
+    width: 750px;
+}
+.relleno1{
+    background-color: white;
+    height: 303px;
+    display: flex;
+}
+.relleno1-1{
+    width: 33%;
+    border-color: #05002b;
+    border-width: 1px;
+    border-top-width: 0px;
+    border-style: solid;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.relleno1-1 h2{
+    width: 340px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.relleno1-1 button, .relleno1-1 a {
+    color: white;
+    font-size: 23px;
+    width: 225px;
+    height: 65px;
+    background-color: #05002b;
+    border: 0;
+    border-radius: 100px;
+}
+.relleno1-1 button:hover{
+    background-color: #47cc5e;
+    color: black;
+    cursor: pointer;
+}
+.relleno2{
+    height: 225px;
+    background-color: #05002b;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.relleno2 button, .relleno2 a{
+    color: #05002b;
+    font-size: 23px;
+    width: 277px;
+    height: 65px;
+    background-color: #47cc5e;
+    border: 0;
+    border-radius: 100px;
+    margin-right: 200px;
+}
+.relleno2 button:hover{
+    background-color: white;
+    cursor: pointer;
+}
+.tema4{
+    color: white;
+    font-size: 80px;
+    background-color: #970cda;
+    display: flex;
+    justify-content: start;
+    height: 442px;
+    border-style: solid;
+    border-color: #05002b;
+    border-width: 1px;
+}
+.tema4 div{
+    display: flex;
+    align-items: center;
+    height: 442px;
+    margin-left: 400px;
+    width: 500px;
+}
+.tema4 h1{
+    margin: 0;
+}
+.tema5{
+    display: flex;
+    justify-content: space-between;
+    height: 408px;
+    background-color: #970cda;
+}
+.tema5 .tema5-1{
+    margin-left: 200px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.tema5-1 p{
+    text-align: center;
+    font-size: 20px;
+}
+.tema5-1 button{
+    color: #05002b;
+    font-size: 23px;
+    width: 220px;
+    height: 65px;
+    background-color: #47cc5e;
+    border: 0;
+    border-radius: 100px;
+}
+.tema5-1 button:hover{
+    background-color: #05002b;
+    color: white;
+    cursor: pointer;
+}
+.relleno3{
+    height: 270px;
+    background-color: white;  
+    border-style: solid;
+    border-width: 0;
+    border-top-width: 1px;
+    border-bottom-width: 1px;  
+}
+.relleno4{
+    font-size: 50px;
+    height: 208px;
+    background-color: white;
+    border-style: solid;
+    border-width: 0;
+    border-bottom-width: 1px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.relleno5{
+    font-size: 50px;
+    height: 208px;
+    background-color: white;
+    border-style: solid;
+    border-width: 0;
+    border-bottom-width: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tema6{
+    height: 392px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    font-size: 20px;
+}
+.tema6 div{
+    width: 500px;
+    margin-right: 400px;
+}
+.tema6 div a button{
+    color: #05002b;
+    font-size: 23px;
+    width: 229px;
+    height: 65px;
+    background-color: #47cc5e;
+    border: 0;
+    border-radius: 100px;
+}
+.tema6 div a button:hover{
+    background-color: #05002b;
+    color: white;
+}
+footer{
+    height: 412px;
+    background-color: #05002b;
+}
+footer div{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.final {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    color: white;
+}
+
+

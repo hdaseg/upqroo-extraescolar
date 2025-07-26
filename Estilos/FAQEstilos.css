@@ -1,0 +1,117 @@
+body{
+    margin: auto;
+    background-color: white;
+}
+nav {
+    width: 100%;
+    background-color: #ff8f00;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+}
+nav ul li{
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    padding-right: 32px;
+    padding-left: 32px;
+    height: 86px;
+    width: fit-content;
+    display: inline;
+    display: flex;
+    align-items: center;
+}
+nav ul li a:hover{
+    text-decoration: underline;
+}
+.li1, .li2, .li3{
+    text-decoration: none;
+    border-style: solid;
+    border-color: black;
+    border-right-width: 1px;
+    border-left-width: 1px;
+    border-top: 0;
+    border-bottom: 0;
+}
+.li1 a, .li2 a, .li3 a{
+    text-decoration: none;
+    color:white;
+}
+.li2{
+    border-right-width: 1px;
+    border-left-width: 0px;
+}
+.li3{
+    border-right-width: 1px;
+    border-left-width: 0px;
+}
+nav ul{
+    margin: 0;
+    display: flex;
+    text-align: center;
+    margin-right: 40px;
+}
+.logo {
+    display: block;
+    background-color: white;
+    border-color: #e4e6e8;
+    border-style: solid;
+    border-width: 3px;
+    height: 80px;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+}
+.faq-container {
+    max-width: 800px;
+    margin: auto;
+  
+}
+details {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
+    padding: 1rem;
+    transition: background 0.3s;
+}
+summary {
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    list-style: none;
+}
+summary::-webkit-details-marker {
+    display: none;
+}
+summary::after {
+    content: '➕';
+    float: right;
+    transition: transform 0.3s;
+}
+details[open] summary::after {
+    content: '➖';
+}
+.faq-answer {
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #e0e0e0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+@media (max-width: 600px) {
+body {
+    padding: 1rem;
+  }
+summary {
+    font-size: 1rem;
+  }
+.faq-answer {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,276 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Roboto:wght@300;400;500;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+body{
+    margin: auto;
+    background-color: white;
+}
+nav {
+    width: 100%;
+    background-color: #FF6600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+}
+nav ul li{
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    padding-right: 32px;
+    padding-left: 32px;
+    height: 86px;
+    width: fit-content;
+    display: inline;
+    display: flex;
+    align-items: center;
+}
+nav ul li a:hover{
+    text-decoration: underline;
+}
+.li1, .li2, .li3{
+    text-decoration: none;
+    border-style: solid;
+    border-color: black;
+    border-right-width: 1px;
+    border-left-width: 1px;
+    border-top: 0;
+    border-bottom: 0;
+}
+.li1 a, .li2 a, .li3 a{
+    text-decoration: none;
+    color:white;
+}
+.li2{
+    border-right-width: 1px;
+    border-left-width: 0px;
+}
+.li3{
+    border-right-width: 1px;
+    border-left-width: 0px;
+}
+nav ul{
+    margin: 0;
+    display: flex;
+    text-align: center;
+    margin-right: 40px;
+}
+.logo {
+    display: block;
+    background-color: white;
+    border-color: #e4e6e8;
+    border-style: solid;
+    border-width: 3px;
+    height: 80px;
+}
+
+main {
+  position: relative;
+  width: calc(min(90rem, 90%));
+  margin: 0 auto;
+  min-height: 85vh;
+  column-gap: 3rem;
+  padding-block: min(20vh, 3rem);
+}
+
+.bg {
+  position: fixed;
+  top: -4rem;
+  left: -12rem;
+  z-index: -1;
+  opacity: 0;
+}
+
+.bg2 {
+  position: fixed;
+  bottom: -2rem;
+  right: -3rem;
+  z-index: -1;
+  width: 9.375rem;
+  opacity: 0;
+}
+
+main > div span {
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 1rem;
+  color: #717171;
+}
+
+main > div h1 {
+  text-transform: capitalize;
+  letter-spacing: 0.8px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-size: clamp(3.4375rem, 3.25rem + 0.75vw, 4rem);
+  background-color: #005baa;
+  background-image: linear-gradient(45deg, #ff8f00, #663a00);
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+
+main > div hr {
+  display: block;
+  background: #FF6600;
+  height: 0.25rem;
+  width: 6.25rem;
+  border: none;
+  margin: 1.125rem 0 1.875rem 0;
+}
+
+main > div p {
+  line-height: 1.6;
+}
+
+main a {
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #717171;
+  font-weight: 500;
+  background: #fff;
+  border-radius: 3.125rem;
+  transition: 0.3s ease-in-out;
+}
+
+main > div > a {
+  border: 2px solid #c2c2c2;
+  margin-top: 2.188rem;
+  padding: 0.625rem 1.875rem;
+}
+
+main > div > a:hover {
+  border: 0.125rem solid #FF6600;
+  color: #ff8f00;
+}
+
+.swiper {
+  width: 100%;
+}
+
+.swiper-pagination-bullet,
+.swiper-pagination-bullet-active {
+  background: #fff;
+}
+
+.swiper-pagination {
+  bottom: 1.25rem !important;
+}
+
+.swiper-slide {
+  width: 18.75rem;
+  height: 28.125rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: self-start;
+}
+
+.swiper-slide h2 {
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 1.4;
+  margin-bottom: 0.625rem;
+  padding: 0 0 0 1.563rem;
+  text-transform: uppercase;
+}
+
+.swiper-slide p {
+  color: #dadada;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  padding: 0 1.563rem;
+  line-height: 1.6;
+  font-size: 1rem;
+  font-weight: bold;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.swiper-slide a {
+  margin: 1.25rem 1.563rem 3.438rem 1.563rem;
+  padding: 0.438em 1.875rem;
+  font-size: 0.9rem;
+}
+
+.swiper-slide a:hover {
+  color: #FF6600;
+}
+
+.swiper-slide div {
+  display: none;
+  opacity: 0;
+  padding-bottom: 0.625rem;
+}
+
+.swiper-slide-active div {
+  display: block;
+  opacity: 1;
+}
+
+.swiper-slide--one {
+  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400), url("https://upqroo.edu.mx/wp-content/uploads/2025/06/484750088_1172983031286847_1393316158765866240_n.jpg") no-repeat 50% 50%/cover;
+}
+
+.swiper-slide--two {
+  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400), url("https://upqroo.edu.mx/wp-content/uploads/2025/06/488892137_1189922509592899_7814658839265512887_n.jpg") no-repeat 50% 50%/cover;
+}
+
+.swiper-slide--three {
+  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400), url("https://upqroo.edu.mx/wp-content/uploads/2025/06/488073845_1182750420310108_3069266325311752722_n.jpg") no-repeat 50% 50%/cover;
+}
+
+.swiper-slide--four {
+  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400), url("https://upqroo.edu.mx/wp-content/uploads/2025/06/DSC_7202-scaled.jpg") no-repeat 50% 50%/cover;
+}
+
+.swiper-slide--five {
+  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400), url("https://upqroo.edu.mx/wp-content/uploads/2025/06/489039480_1189905459594604_5473272819565320827_n.jpg") no-repeat 50% 50%/cover;
+}
+.swiper-slide--six {
+  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400), url("https://upqroo.edu.mx/wp-content/uploads/2025/06/DSC_7251-scaled.jpg") no-repeat 50% 50%/cover;
+}
+.swiper-slide--seven {
+  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400), url("https://pbs.twimg.com/media/GUyyHf4WIAA8FzD?format=jpg&name=large") no-repeat 50% 50%/cover;
+}
+.swiper-slide--eight {
+  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400), url("https://burst.shopifycdn.com/photos/chess-pieces-in-focus-on-a-wooden-chess-board.jpg?width=925&format=pjpg&exif=0&iptc=0") no-repeat 50% 50%/cover;
+}
+.swiper-slide--nine {
+  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400), url("https://burst.shopifycdn.com/photos/chess-pieces-in-focus-on-a-wooden-chess-board.jpg?width=925&format=pjpg&exif=0&iptc=0") no-repeat 50% 50%/cover;
+}
+.swiper-3d .swiper-slide-shadow-left,
+.swiper-3d .swiper-slide-shadow-right {
+  background-image: none;
+}
+
+@media screen and (min-width: 48rem) {
+  main {
+    display: flex;
+    align-items: center;
+  }
+
+  .bg,
+.bg2 {
+    opacity: 0.1;
+  }
+}
+@media screen and (min-width: 93.75rem) {
+  .swiper {
+    width: 85%;
+  }
+}
