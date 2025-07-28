@@ -25,7 +25,7 @@ if($query){
     <!----===== Iconscout CSS ===== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
-    <title>Responsive Regisration Form </title> 
+    <title>Formulario de inscripción | UPQROO</title> 
 </head>
 <body>
     <div class="container">

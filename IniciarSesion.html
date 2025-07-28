@@ -3,25 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-  <link rel="stylesheet" href="Estilos/IniciarSesion.css">
+  <title>Iniciar Sesión | UPQROO</title>
+  <link rel="stylesheet" href="Estilos/IniciarSesion.css?=v1">
 </head>
+
 <body>
 
-  <div class="login-box">
-    <h2>Iniciar Sesión</h2>
-    <form action="Login.php" method="post">
-      <div class="form-group">
-        <label for="username">Usuario</label>
-        <input type="text" name="nombre" placeholder="Tu usuario" required>
-      </div>
-      <div class="form-group">
-        <label for="password">Contraseña</label>
-        <input type="password" name="password" placeholder="Tu contraseña" required>
-      </div>
-      <input type="hidden" name="actividad" id="actividad">
-      <button type="submit" class="login-btn">Iniciar sesión</button>
-    </form> 
+  <div class="topbar">
+      <a href="index.html"><img src="https://upqroo.edu.mx/wp-content/uploads/2020/11/2UPQROO-logo.png" alt="Logo UPQROO"></a>
+      <nav class="menu">
+          <a href="IniciarSesion.html">Inicio</a>
+          <a href="Inscripcion.html">Servicios</a>
+          <a href="Deportes.html">Extraescolares</a>
+      </nav>
+  </div>
+
+  <div class="alinear">
+    <div class="login-box">
+      <h2>Iniciar Sesión</h2>
+      <form action="Login.php" method="post">
+        <div class="form-group">
+          <label for="username">Usuario</label>
+          <input type="text" name="nombre" placeholder="Tu usuario" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Contraseña</label>
+          <input type="password" name="password" placeholder="Tu contraseña" required>
+        </div>
+        <input type="hidden" name="actividad" id="actividad">
+        <button type="submit" class="login-btn">Iniciar sesión</button>
+      </form> 
+    </div>
   </div>
 
 <script>

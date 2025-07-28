@@ -1,0 +1,202 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Roboto:wght@300;400;500;900&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+    font-family: "Open Sans", sans-serif;
+
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+.barra-superior {
+  background-color: #FF6600;
+  color: white;
+  width: 100vw;              
+  margin: 0;                 
+  padding: 25px 30px;      
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+
+.contenedor-barra {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.logo {
+  height: 60px;
+}
+
+.menu-navegacion a {
+  color: white;
+  text-decoration: none;
+  margin-left: 30px;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.menu-navegacion a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+}
+
+
+.contenedor-principal {
+  display: flex;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.boton-menu {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.boton-menu.activo {
+  background-color: #00d1b2;
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+
+.contenido {
+  flex: 1;
+  padding: 2rem;
+}
+
+.encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.barra-busqueda {
+  padding: 0.5rem;
+  width: 300px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.usuario {
+  font-weight: bold;
+}
+
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.tarjeta {
+  padding: 1rem;
+  border-radius: 12px;
+  color: white;
+  position: relative;
+}
+
+.mediana {
+  grid-column: span 1;
+}
+
+.pequeña {
+  grid-column: span 1;
+}
+.grande {
+    grid-column: span 2;
+}
+.generales{
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.fondo-imagen {
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2SkosuBWRffVnvcbITRbIatlTwyINP4IEeQ&s');
+  background-size: cover;
+  background-position: center;
+  color: rgb(0, 0, 0);
+}
+
+.fondo-naranja {
+  background-color: #FF6600;
+}
+
+.fondo-vino {
+  background-color: #6B0000;
+}
+
+.fondo-blanco {
+  background-color: #FFFFFF;
+  color: #000;
+}
+
+.fondo-beige {
+  background-color: #FFF9F4;
+  color: #000;
+}
+
+.fondo-negro {
+  background-color: #000;
+  color: #FFF;
+}
+
+
+.etiqueta {
+  font-size: 0.75rem;
+  background-color: rgba(0,0,0,0.5);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+footer {
+  text-align: center;
+  background-color: #2c2c2c;
+  color: #FFF9F4;
+  padding: 15px;
+  margin-top: 30px;
+  font-size: 0.9rem;
+}
+
+.tarjeta {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarjeta:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+.tarjeta li {
+  margin-left: 1rem;
+  margin-bottom: 0.3rem;
+  list-style-type: square;
+}
+.barra-progreso {
+  background-color: rgba(255,255,255,0.3);
+  border-radius: 10px;
+  overflow: hidden;
+  height: 10px;
+  margin-top: 0.5rem;
+}
+
+.progreso {
+  background-color: white;
+  height: 100%;
+  width: 0%;
+  transition: width 0.5s;
+}

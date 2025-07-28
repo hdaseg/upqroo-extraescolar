@@ -28,7 +28,7 @@ if ($query && mysqli_num_rows($query) == 1) {
     }else{              //inscrito
         switch($nivel){
             case 1:
-                header("Location: index.html");     //acceso estudiante
+                header("Location: usuario.php");     //acceso estudiante
                 break;
             case 2:
                 header("Location: Admin.html");

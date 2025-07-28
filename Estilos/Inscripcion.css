@@ -9,65 +9,35 @@ body{
     margin: auto;
     background-color: white;
 }
-nav {
-    width: 100%;
+.topbar {
+    margin: 0;
     background-color: #FF6600;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-color: black;
-    border-style: solid;
-    border-width: 1px;
+    padding: 25px 20px;
+    flex-wrap: wrap;
 }
-nav ul li{
-    font-size: 25px;
-    font-weight: bold;
+
+.topbar img {
+    height: 60px;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.menu a {
+    margin: 0 10px;
+    font-size: 30px;
     color: white;
-    padding-right: 32px;
-    padding-left: 32px;
-    height: 86px;
-    width: fit-content;
-    display: inline;
-    display: flex;
-    align-items: center;
+    text-decoration: none;
+    font-weight: bold;
 }
-nav ul li a:hover{
+.menu a:hover{
     text-decoration: underline;
-}
-.li1, .li2, .li3{
-    text-decoration: none;
-    border-style: solid;
-    border-color: black;
-    border-right-width: 1px;
-    border-left-width: 1px;
-    border-top: 0;
-    border-bottom: 0;
-}
-.li1 a, .li2 a, .li3 a{
-    text-decoration: none;
-    color:white;
-}
-.li2{
-    border-right-width: 1px;
-    border-left-width: 0px;
-}
-.li3{
-    border-right-width: 1px;
-    border-left-width: 0px;
-}
-nav ul{
-    margin: 0;
-    display: flex;
-    text-align: center;
-    margin-right: 40px;
-}
-.logo {
-    display: block;
-    background-color: white;
-    border-color: #e4e6e8;
-    border-style: solid;
-    border-width: 3px;
-    height: 80px;
+    text-decoration-thickness: 3px;
 }
 
 main {
