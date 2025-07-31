@@ -1,3 +1,23 @@
+<?php
+include("Conexion.php");
+session_start();
+
+$id = $_SESSION['id'];
+$query = mysqli_query($conn, "SELECT * FROM alumnos WHERE id = $id");
+$datos = mysqli_fetch_assoc($query);
+
+$extra = $datos["id_extraescolar"];
+
+$query2 = mysqli_query($conn, "SELECT * FROM avisos WHERE id_extraescolar = $extra");
+$datos2 = mysqli_fetch_assoc($query2);
+
+$query3 = mysqli_query($conn, "SELECT * FROM extraescolar WHERE id = $extra");
+$datos3 = mysqli_fetch_assoc($query3);
+
+$query4 =  mysqli_query($conn,"SELECT * FROM profesores WHERE id_extraescolar = $extra");
+$datos4 = mysqli_fetch_assoc($query4);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,8 +42,7 @@
 
   <main class="contenido">
     <header class="encabezado">
-      <input type="text" placeholder="Buscar..." class="barra-busqueda">
-      <div class="usuario">ALUMNO</div>
+      <a class="usuario" href="Usuario.php">Perfil</a>
     </header>
 
 
@@ -43,7 +62,7 @@
 
         <div class="tarjeta mediana fondo-naranja">
           <h3>Clase Inscrito</h3>
-          <p>Taekwondo</p>
+          <p><?php echo $datos3['Nombre'] ?></p>
         </div>
 
         <div class="tarjeta mediana fondo-vino">
@@ -56,14 +75,14 @@
 
         <div class="tarjeta mediana fondo-vino">
             <h3>Estado De La Clase</h3>
-            <p>ACTIVA</p>
+            <p><?php echo $datos2['estado'] ?></p>
             <br>
             <br>
         </div>
 
         <div class="tarjeta mediana fondo-vino">
-            <h3>PARTIDOS/ACTIVIDADES</h3>
-            <p>NO HAY PARTIDOS PARA ESTA SEMANA</p>
+            <h3>Partidos</h3>
+            <p><?php echo $datos2['fecha']?> <?php echo $datos2['partido'] ?></p>
             <br>
             <br>
         </div>
@@ -72,7 +91,7 @@
             <div class="etiqueta">NOTICIA</div>
             <br>
             <h3>Avisos del profesor</h3>
-            <p>LA CASE SE CANSELA POR TEMA DE LLUVIA</p>
+            <p><?php echo $datos2['aviso']?></p>
             <br>
             <br>
         </div>
@@ -84,17 +103,15 @@
           </div>
         </div>
         <div class="tarjeta mediana fondo-naranja">
-          <h3>Calendario de Actividades</h3>
+          <h3>Actividad</h3>
           <ul>
-            <li>29 Julio – Torneo interno</li>
-            <li>2 Agosto – Clase especial con instructor</li>
+            <li><?php echo $datos2['fecha_act']?> <?php echo $datos2['actividad']?></li>
           </ul>
         </div>
         <div class="tarjeta grande fondo-naranja">
           <h3>¿Necesitas ayuda?</h3>
-          <p>Consulta con tu coordinador o escribe a: <strong>deportes@upqroo.edu.mx</strong></p>
+          <p>Consulta con tu profesor o escribe a: <strong><?php echo $datos4['correo']?></strong></p>
         </div>
-
       </section>
     </main>
   </div>

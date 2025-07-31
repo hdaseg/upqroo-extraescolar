@@ -22,16 +22,16 @@ if ($query && mysqli_num_rows($query) == 1) {
                 header("Location: InscripcionForm.php");
                 break;
             case 2:
-                header("Location: Admin.html");
+                header("Location: maestro.php");
                 break;
         }
     }else{              //inscrito
         switch($nivel){
             case 1:
-                header("Location: usuario.php");     //acceso estudiante
+                header("Location: alumnos.php");     //acceso estudiante
                 break;
             case 2:
-                header("Location: Admin.html");
+                header("Location: maestro.php");
                 break;
         }
     }
