@@ -12,7 +12,6 @@ if($query){
 ?>
 
 <!DOCTYPE html>
-<!--=== Coding by CodingLab | www.codinglabweb.com === -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -140,7 +139,7 @@ if($query){
                         </div>
                     </div>
 
-                    <button class="nextBtn" type="submit">
+                    <button class="nextBtn" type="submit" name="send">
                         <span class="btnText">Next</span>
                         <i class="uil uil-navigator"></i>
                     </button>

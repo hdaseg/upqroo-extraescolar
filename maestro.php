@@ -79,11 +79,7 @@ $datos2 = mysqli_fetch_assoc($query2);
 
       <div class="tarjeta mediana fondo-naranja">
         <h3>Control de Asistencias</h3>
-        <p>Selecciona grupo o clase para ver y editar asistencias.</p>
-        <select>
-          <option>Taekwondo</option>
-          <option>Fútbol</option>
-        </select>
+        <p>Ver alumnos para visualizar y editar asistencias.</p>
         <button class="btn">Ver Asistencias</button>
       </div>
         <form class="tarjeta larga fondo-naranja" action="partidos.php" method="POST">
@@ -98,8 +94,19 @@ $datos2 = mysqli_fetch_assoc($query2);
         </form>
         </div>
       <div class="tarjeta grande fondo-naranja">
-        <h3>Contacto con Coordinador</h3>
-        <p>Para temas administrativos: <strong>deportes@upqroo.edu.mx</strong></p>
+        <h3>Cambio de horario</h3>
+        <form action="horario.php" method="POST">
+          <select name="dia" required>
+            <option value="" disabled selected>Elegir Opción</option>
+            <option value="lunes">Lunes</option>
+            <option value="martes">Martes</option>
+            <option value="miercoles">Miercoles</option>
+            <option value="jueves">Jueves</option>
+            <option value="viernes">Viernes</option>
+          </select>
+          <input type="text" placeholder="Ej. 10:30AM-12:30PM" name="hora">
+          <button type="submit" class="btn">Cambiar horario</button>
+        </form>
       </div>
     </section>
   </main>

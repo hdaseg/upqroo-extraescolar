@@ -16,6 +16,8 @@ $datos3 = mysqli_fetch_assoc($query3);
 
 $query4 =  mysqli_query($conn,"SELECT * FROM profesores WHERE id_extraescolar = $extra");
 $datos4 = mysqli_fetch_assoc($query4);
+
+$result = mysqli_query($conn, "SELECT * FROM horarios WHERE id = $extra");
 ?>
 
 <!DOCTYPE html>
@@ -66,11 +68,16 @@ $datos4 = mysqli_fetch_assoc($query4);
         </div>
 
         <div class="tarjeta mediana fondo-vino">
-            <h3>Horario</h3>
-            <li>Lunes – 10:30 a 11:30 AM</li>
-            <li>Martes – 2:15 a 3:15 PM</li>
-            <li>Miércoles – 10:30 a 11:30 AM</li>
-            <li>Jueves – 2:15 a 3:15 PM</li>
+            <h3>Horarios</h3>
+            <?php
+              if ($fila = mysqli_fetch_assoc($result)) {
+                  foreach ($fila as $columna => $valor) {
+                      if (!in_array($columna, ['id', 'id_extraescolar']) && !empty($valor)) {
+                          echo "<li>" . ucfirst($columna) . " – " . htmlspecialchars($valor) . "</li>";
+                      }
+                  }
+              }
+            ?>
         </div>
 
         <div class="tarjeta mediana fondo-vino">

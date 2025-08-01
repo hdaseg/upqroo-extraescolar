@@ -1,5 +1,6 @@
 <?php
 include("Conexion.php");
+include("mail.php");
 
 session_start();
 $id = $_SESSION["id"];
@@ -35,10 +36,6 @@ if(!empty($apellidoP) && !empty($apellidoM) && !empty($nombre) && !empty($correo
     $query = mysqli_query($conn,"UPDATE usuarios SET inscrito = 1 WHERE id = $id");
 }
 
-echo "<script>
-    alert('¡Inscripción realizada con éxito!');
-    window.location.href = 'index.html';
-</script>";
 
 exit;
 
