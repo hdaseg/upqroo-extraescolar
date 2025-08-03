@@ -79,8 +79,8 @@ $datos2 = mysqli_fetch_assoc($query2);
 
       <div class="tarjeta mediana fondo-naranja">
         <h3>Control de Asistencias</h3>
-        <p>Ver alumnos para visualizar y editar asistencias.</p>
-        <button class="btn">Ver Asistencias</button>
+        <p style="margin-bottom: 20px;">Ver alumnos para visualizar y editar asistencias.</p>
+        <a class="btn" href="asistencia.php" style="text-decoration: none;">Ver Asistencias</a>
       </div>
         <form class="tarjeta larga fondo-naranja" action="partidos.php" method="POST">
             <div>

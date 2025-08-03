@@ -16,7 +16,7 @@ body {
   color: white;
   width: 100vw;              
   margin: 0;                 
-  padding: 25px 30px;      
+  padding: 1rem 2rem;   
   display: flex;
   justify-content: space-between;
   align-items: center;

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 01, 2025 at 01:50 PM
+-- Generation Time: Aug 03, 2025 at 06:55 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -40,16 +40,42 @@ CREATE TABLE `alumnos` (
   `Cuatrimestre` enum('Tercero','Sexto','Noveno') NOT NULL,
   `Turno` enum('Matutino','Vespertino') NOT NULL,
   `Fecha` date DEFAULT NULL,
-  `Medico` enum('Si','No') NOT NULL
+  `Medico` enum('Si','No') NOT NULL,
+  `asistencia` int(11) NOT NULL,
+  `falta` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `alumnos`
 --
 
-INSERT INTO `alumnos` (`id`, `id_extraescolar`, `ApellidoP`, `ApellidoM`, `Nombre`, `Correo`, `Genero`, `Matricula`, `Carrera`, `Cuatrimestre`, `Turno`, `Fecha`, `Medico`) VALUES
-(1, 1, 'Acosta', 'Segovia', 'Harry D\'anniel', '202400194@upqroo.edu.mx', 'Masculino', '202400194', 'Ingeniería en Tecnologías de la Información e Innovación Digital', 'Tercero', 'Matutino', '2025-07-25', 'No'),
-(3, 1, 'Cristina', 'Acosta', 'Segovia', '202400195@upqroo.edu.mx', 'Femenino', '202400195', 'Ingeniería en Tecnologías de la Información e Innovación Digital', 'Tercero', 'Matutino', '2025-07-30', 'No');
+INSERT INTO `alumnos` (`id`, `id_extraescolar`, `ApellidoP`, `ApellidoM`, `Nombre`, `Correo`, `Genero`, `Matricula`, `Carrera`, `Cuatrimestre`, `Turno`, `Fecha`, `Medico`, `asistencia`, `falta`) VALUES
+(1, 1, 'Acosta', 'Segovia', 'Harry D\'anniel', '202400194@upqroo.edu.mx', 'Masculino', '202400194', 'Ingeniería en Tecnologías de la Información e Innovación Digital', 'Tercero', 'Matutino', '2025-07-25', 'No', 10, 0),
+(3, 1, 'Cristina', 'Acosta', 'Segovia', '202400195@upqroo.edu.mx', 'Femenino', '202400195', 'Ingeniería en Tecnologías de la Información e Innovación Digital', 'Tercero', 'Matutino', '2025-07-30', 'No', 10, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `avisos`
+--
+
+CREATE TABLE `avisos` (
+  `id` int(11) NOT NULL,
+  `id_extraescolar` int(11) NOT NULL,
+  `aviso` varchar(255) NOT NULL,
+  `fecha_act` date DEFAULT NULL,
+  `actividad` varchar(255) NOT NULL,
+  `fecha` date NOT NULL,
+  `partido` varchar(255) NOT NULL,
+  `estado` enum('Activa','Inactiva') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `avisos`
+--
+
+INSERT INTO `avisos` (`id`, `id_extraescolar`, `aviso`, `fecha_act`, `actividad`, `fecha`, `partido`, `estado`) VALUES
+(2, 1, 'lluvia mañana', '2025-07-23', 'borrar la cuenta', '2025-07-31', 'partidito mañana', 'Inactiva');
 
 -- --------------------------------------------------------
 
@@ -77,6 +103,51 @@ INSERT INTO `extraescolar` (`id`, `Nombre`, `Profesor`) VALUES
 (7, 'Atletismo', 'Omar Javier Castillo Herrera'),
 (8, 'Ajedrez', 'Rodrigo Emiliano Salinas Cruz'),
 (9, 'Vacio', 'Vacio');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `horarios`
+--
+
+CREATE TABLE `horarios` (
+  `id` int(11) NOT NULL,
+  `id_extraescolar` int(11) NOT NULL,
+  `lunes` varchar(25) DEFAULT NULL,
+  `martes` varchar(25) DEFAULT NULL,
+  `miercoles` varchar(25) DEFAULT NULL,
+  `jueves` varchar(25) DEFAULT NULL,
+  `viernes` varchar(25) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `horarios`
+--
+
+INSERT INTO `horarios` (`id`, `id_extraescolar`, `lunes`, `martes`, `miercoles`, `jueves`, `viernes`) VALUES
+(1, 1, '', NULL, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `profesores`
+--
+
+CREATE TABLE `profesores` (
+  `id` int(11) NOT NULL,
+  `id_extraescolar` int(11) NOT NULL,
+  `apellidoP` varchar(20) NOT NULL,
+  `apellidoM` varchar(20) NOT NULL,
+  `nombre` varchar(20) NOT NULL,
+  `correo` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `profesores`
+--
+
+INSERT INTO `profesores` (`id`, `id_extraescolar`, `apellidoP`, `apellidoM`, `nombre`, `correo`) VALUES
+(2, 1, 'Ruiz', 'Hernandez', 'Ricardo Armando', 'ricardoruiz@upqroo.edu.mx');
 
 -- --------------------------------------------------------
 
@@ -113,10 +184,31 @@ ALTER TABLE `alumnos`
   ADD KEY `id_extraescolar` (`id_extraescolar`);
 
 --
+-- Indexes for table `avisos`
+--
+ALTER TABLE `avisos`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_extraescolar` (`id_extraescolar`);
+
+--
 -- Indexes for table `extraescolar`
 --
 ALTER TABLE `extraescolar`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `horarios`
+--
+ALTER TABLE `horarios`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_extraescolar` (`id_extraescolar`);
+
+--
+-- Indexes for table `profesores`
+--
+ALTER TABLE `profesores`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_extraescolar` (`id_extraescolar`);
 
 --
 -- Indexes for table `usuarios`
@@ -135,10 +227,28 @@ ALTER TABLE `alumnos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `avisos`
+--
+ALTER TABLE `avisos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `extraescolar`
 --
 ALTER TABLE `extraescolar`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `horarios`
+--
+ALTER TABLE `horarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `profesores`
+--
+ALTER TABLE `profesores`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `usuarios`
@@ -156,6 +266,26 @@ ALTER TABLE `usuarios`
 ALTER TABLE `alumnos`
   ADD CONSTRAINT `alumnos_ibfk_1` FOREIGN KEY (`id`) REFERENCES `usuarios` (`id`),
   ADD CONSTRAINT `alumnos_ibfk_2` FOREIGN KEY (`id_extraescolar`) REFERENCES `extraescolar` (`id`);
+
+--
+-- Constraints for table `avisos`
+--
+ALTER TABLE `avisos`
+  ADD CONSTRAINT `avisos_ibfk_1` FOREIGN KEY (`id_extraescolar`) REFERENCES `extraescolar` (`id`),
+  ADD CONSTRAINT `avisos_ibfk_2` FOREIGN KEY (`id`) REFERENCES `profesores` (`id`);
+
+--
+-- Constraints for table `horarios`
+--
+ALTER TABLE `horarios`
+  ADD CONSTRAINT `horarios_ibfk_1` FOREIGN KEY (`id_extraescolar`) REFERENCES `extraescolar` (`id`);
+
+--
+-- Constraints for table `profesores`
+--
+ALTER TABLE `profesores`
+  ADD CONSTRAINT `profesores_ibfk_1` FOREIGN KEY (`id`) REFERENCES `usuarios` (`id`),
+  ADD CONSTRAINT `profesores_ibfk_2` FOREIGN KEY (`id_extraescolar`) REFERENCES `extraescolar` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
