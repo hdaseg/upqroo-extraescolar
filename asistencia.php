@@ -15,12 +15,35 @@ $query2 = mysqli_query($conn, "SELECT * FROM alumnos WHERE id_extraescolar = $ex
 <head>
   <meta charset="UTF-8">
   <title>Gestión de Asistencias</title>
-  <link rel="stylesheet" href="./Estilos/asistencias.css">
+  <link rel="stylesheet" href="./Estilos/asistencias.css?=v1">
 </head>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const selects = document.querySelectorAll("select[name^='asistencia']");
+
+    selects.forEach(select => {
+      const updateColor = () => {
+        select.classList.remove("presente", "ausente", "justificado");
+
+        const value = select.value.toLowerCase();
+        if (value === "presente") select.classList.add("presente");
+        if (value === "ausente") select.classList.add("ausente");
+        if (value === "justificado") select.classList.add("justificado");
+      };
+
+      // Inicializar color al cargar
+      updateColor();
+
+      // Actualizar color al cambiar
+      select.addEventListener("change", updateColor);
+    });
+  });
+</script>
+
 <body>
   <header class="barra-superior">
     <div class="contenedor-barra">
-      <a><img src="https://upqroo.edu.mx/wp-content/uploads/2020/11/2UPQROO-logo.png" alt="Logo UPQROO" class="logo"></a>
+      <a href="index.html"><img src="https://upqroo.edu.mx/wp-content/uploads/2020/11/2UPQROO-logo.png" alt="Logo UPQROO" class="logo"></a>
       <nav class="menu-navegacion">
         <a href="IniciarSesion.html">Inicio</a>
         <a href="maestro.php">Clases</a>
@@ -56,10 +79,10 @@ $query2 = mysqli_query($conn, "SELECT * FROM alumnos WHERE id_extraescolar = $ex
                       <td>$matricula</td>
                       <td>$nombreCompleto</td>
                       <td>
-                          <select name='asistencia[$matricula]'>
-                              <option value='Presente'>Presente</option>
-                              <option value='Ausente'>Ausente</option>
-                              <option value='Justificado'>Justificado</option>
+                          <select name='asistencia[$matricula]' class='select-asistencia'>
+                            <option value='Presente'>Presente</option>
+                            <option value='Ausente'>Ausente</option>
+                            <option value='Justificado'>Justificado</option>
                           </select>
                       </td>
                   </tr>";

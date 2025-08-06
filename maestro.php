@@ -19,7 +19,7 @@ $datos2 = mysqli_fetch_assoc($query2);
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Panel del Profesor - Extraescolares</title>
-  <link rel="stylesheet" href="./Estilos/maestro.css">
+  <link rel="stylesheet" href="./Estilos/maestro.css?=v1">
 </head>
 <body>
   <header class="barra-superior">

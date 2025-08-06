@@ -5,9 +5,9 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 //required files
-require 'phpmailer/src/Exception.php';
-require 'phpmailer/src/PHPMailer.php';
-require 'phpmailer/src/SMTP.php';
+require 'phpMailer/src/Exception.php';
+require 'phpMailer/src/PHPMailer.php';
+require 'phpMailer/src/SMTP.php';
 
 //Create an instance; passing `true` enables exceptions
 if (isset($_POST["send"])) {

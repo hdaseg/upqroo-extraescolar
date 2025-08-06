@@ -82,7 +82,7 @@ body{
     border-top-right-radius: 50px;
     width: 100%;
     height: 400px;
-    background-color: #05002b;
+    background-color: #4b0000;
 }
 .tema2{
     color: white;
@@ -101,7 +101,7 @@ body{
     flex-direction: column;
     justify-content: flex-start;
     align-items: end;
-    background-color: #0c46da;
+    background-color: #ff6400;
     padding: 40px;
     border-color: black;
     border-style: solid;
@@ -114,11 +114,12 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    background-color: #970cda;
+    background-color: #ff8f00;
     padding: 40px;
     border-color: black;
     border-style: solid;
     border-width: 1px;
+    border-left-width: 0px;
 }
 .tema2-3{
     text-decoration: none;
@@ -128,7 +129,7 @@ body{
     flex-direction: column;
     justify-content: flex-start;
     padding: 40px;
-    background-color: #c174e6;
+    background-color: #FF6600;
     border-color: black;
     border-style: solid;
     border-width: 1px;
@@ -157,7 +158,7 @@ body{
     font-size: 30px;
     width: 250px;
     height: 80px;
-    background-color: #47cc5e;
+    background-color: #FF6600;
     border: 0;
     border-radius: 100px;
 }
@@ -210,18 +211,18 @@ body{
     font-size: 23px;
     width: 225px;
     height: 65px;
-    background-color: #05002b;
+    background-color: #ff6400;
     border: 0;
     border-radius: 100px;
 }
 .relleno1-1 button:hover{
-    background-color: #47cc5e;
-    color: black;
+    background-color: #4b0000;
+    color: white;
     cursor: pointer;
 }
 .relleno2{
     height: 225px;
-    background-color: #05002b;
+    background-color: #4b0000;
     display: flex;
     justify-content: end;
     align-items: center;
@@ -231,7 +232,7 @@ body{
     font-size: 23px;
     width: 277px;
     height: 65px;
-    background-color: #47cc5e;
+    background-color: #ff8f00;
     border: 0;
     border-radius: 100px;
     margin-right: 200px;
@@ -242,8 +243,8 @@ body{
 }
 .tema4{
     color: white;
-    font-size: 80px;
-    background-color: #970cda;
+    font-size: 78px;
+    background-color: #ff8f00;
     display: flex;
     justify-content: start;
     height: 442px;
@@ -255,8 +256,9 @@ body{
     display: flex;
     align-items: center;
     height: 442px;
-    margin-left: 400px;
-    width: 500px;
+    margin-left: 10%;
+    width: 80%;
+    text-align: center;
 }
 .tema4 h1{
     margin: 0;
@@ -265,7 +267,7 @@ body{
     display: flex;
     justify-content: space-between;
     height: 408px;
-    background-color: #970cda;
+    background-color: #ff8f00;
 }
 .tema5 .tema5-1{
     margin-left: 200px;
@@ -280,17 +282,17 @@ body{
     font-size: 20px;
 }
 .tema5-1 button{
-    color: #05002b;
+    color: white;
     font-size: 23px;
     width: 220px;
     height: 65px;
-    background-color: #47cc5e;
+    background-color: #4b0000;
     border: 0;
     border-radius: 100px;
 }
 .tema5-1 button:hover{
-    background-color: #05002b;
-    color: white;
+    background-color: white;
+    color: black;
     cursor: pointer;
 }
 .relleno3{
@@ -340,13 +342,14 @@ body{
     font-size: 23px;
     width: 229px;
     height: 65px;
-    background-color: #47cc5e;
+    background-color: #ff8f00;
     border: 0;
     border-radius: 100px;
 }
 .tema6 div a button:hover{
-    background-color: #05002b;
+    background-color: #4b0000;
     color: white;
+    cursor: pointer;
 }
 footer{
     height: 412px;
