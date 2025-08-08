@@ -26,24 +26,25 @@ $result = mysqli_query($conn, "SELECT * FROM horarios WHERE id = $extra");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Extraescolares-Upqroo</title>
-    <link rel="stylesheet" href="./Estilos/alumnos.css?=v2">
+    <link rel="stylesheet" href="./Estilos/alumnos.css?=v6">
     <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="barra-superior">
-    <div class="contenedor-barra">
-      <a href="index.html"><img src="https://upqroo.edu.mx/wp-content/uploads/2020/11/2UPQROO-logo.png" alt="Logo UPQROO" class="logo"></a>
-      <nav class="menu-navegacion">
-        <a href="IniciarSesion.html">Inicio</a>
-        <a href="Inscripcion.html">Servicios</a>
-        <a href="Deportes.html">Extraescolares</a>
-      </nav>
-    </div>
-  </header>
+    <header>
+        <div class="topbar">
+            <a href="index.html"><img src="https://upqroo.edu.mx/wp-content/uploads/2020/11/2UPQROO-logo.png" alt="Logo UPQROO" class="logoo"></a>
+            <nav class="menu">
+                <a href="IniciarSesion.html">Inicio Sesión</a>
+                <a href="Inscripcion.html">Inscripción</a>
+                <a href="Deportes.html">Horarios</a>
+            </nav>
+        </div>
+    </header>
 
 
   <main class="contenido">
     <header class="encabezado">
+      <h1>Bienvenido <?php echo $datos['Nombre']?> <?php echo $datos['ApellidoP']?> <?php echo $datos['ApellidoM']?></h1>
       <a class="usuario" href="Usuario.php">Perfil</a>
     </header>
 
@@ -51,7 +52,7 @@ $result = mysqli_query($conn, "SELECT * FROM horarios WHERE id = $extra");
       <section class="tarjetas">
 
         <div class="tarjeta grande fondo-imagen">
-          <h2>Bienvenido a tu extraescolar</h2>
+          <h2>Haz clic para búsqueda rápida</h2>
           <p>Más información sobre Pages</p>
         </div>
 
@@ -60,7 +61,7 @@ $result = mysqli_query($conn, "SELECT * FROM horarios WHERE id = $extra");
           <p><?php echo $datos3['Nombre'] ?></p>
         </div>
 
-        <div class="tarjeta mediana fondo-vino">
+        <div class="tarjeta mediana fondo-naranja">
             <h3>Horarios</h3>
             <?php
               if ($fila = mysqli_fetch_assoc($result)) {
@@ -73,7 +74,7 @@ $result = mysqli_query($conn, "SELECT * FROM horarios WHERE id = $extra");
             ?>
         </div>
 
-        <div class="tarjeta mediana fondo-vino">
+        <div class="tarjeta mediana fondo-naranja">
             <h3>Estado De La Clase</h3>
             <p><?php echo $datos2['estado'] ?></p>
             <br>
@@ -95,15 +96,18 @@ $result = mysqli_query($conn, "SELECT * FROM horarios WHERE id = $extra");
             <br>
             <br>
         </div>
-        <div class="tarjeta mediana fondo-naranja">
+        
+        <div class="tarjeta mediana fondo-vino">
           <h3>Actividad</h3>
           <ul>
             <li><?php echo $datos2['fecha_act']?> <?php echo $datos2['actividad']?></li>
           </ul>
         </div>
-        <div class="tarjeta grande fondo-naranja">
+        <div class="tarjeta grande fondo-vino">
           <h3>¿Necesitas ayuda?</h3>
           <p>Consulta con tu profesor o escribe a: <strong><?php echo $datos4['correo']?></strong></p>
+        </div>
+        <div class="tarjeta larga fondo-imagen2">
         </div>
       </section>
     </main>

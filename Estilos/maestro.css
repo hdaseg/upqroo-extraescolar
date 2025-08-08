@@ -1,50 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Roboto:wght@300;400;500;900&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
   background-color: #FFF9F4;
   color: white;
   line-height: 1.6;
 }
 
-.barra-superior {
-  background-color: #FF6600;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: white;
+.topbar {
+    margin: 0;
+    background-color: #FF6600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    flex-wrap: wrap;
 }
 
-.contenedor-barra {
-  display: flex;
-  align-items: center;
-  width: 100%;
+.topbar img {
+    height: 60px;
 }
 
-.logo {
-  height: 60px;
-  margin-right: 20px;
+.menu {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.menu-navegacion {
-  margin-left: auto;
-  display: flex;
+.menu a {
+    margin: 0 10px;
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
 }
-
-.menu-navegacion a {
-  color: white;
-  text-decoration: none;
-  margin-left: 30px;
-  font-weight: bold;
-  font-size: 30px;
-}
-.menu-navegacion a:hover {
-  text-decoration: underline;
+.menu a:hover{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
 }
 
 
@@ -70,6 +66,7 @@ body {
   padding: 0.5rem 1rem;
   border-radius: 20px;
   font-weight: bold;
+  text-decoration: none;
 }
 
 .seccion-control {
@@ -92,7 +89,12 @@ body {
 }
 
 .fondo-imagen {
-  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMM3LBtZH-85pXX9zuV8OQvpUS-kiG426sJA&s');
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-NMlX6bZTXtO6u2dzLedlFHm-dXVWRyIeCQ&s');
+  background-size: cover;
+  color: rgb(0, 0, 0);
+}
+.fondo-imagen2{
+  background-image: url('https://img.freepik.com/foto-gratis/herramientas-deportivas_53876-138077.jpg');
   background-size: cover;
   color: white;
 }
@@ -113,7 +115,6 @@ textarea {
   width: 100%;
   padding: 0.6rem;
   margin-top: 0.4rem;
-  margin-bottom: 1rem;
   border: 1px solid #ccc;
   border-radius: 6px;
   font-family: inherit;
@@ -147,4 +148,85 @@ footer {
 
 .btn:hover {
   background-color: #cc5200;
+}
+.modal {
+  width: 350px;
+  min-height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.modal-contenido {
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 10px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+.cerrar {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #888;
+}
+.cerrar:hover {
+  color: #000;
+}
+.contraseña {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: #000;
+}
+label {
+  font-weight: bold;
+}
+input[type="password"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+.boton.naranja {
+  background-color: orange;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+.boton.naranja:hover {
+  background-color: darkorange;
+}
+.mensaje-error {
+  display: none;
+  color: red;
+  font-size: 0.9em;
+  width: fit-content;
+  min-height: 1.2em;
+}
+.error {
+  color: red;
+  font-size: 0.9em;
+  min-height: 1.2em; 
+
+}
+.success {
+  color: green;
+  font-size: 0.9em;
+  min-height: 1.2em;
+
+}
+.error-input {
+  border-color: red;
+  min-height: 1.2em;
 }

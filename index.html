@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Extraescolares UQROO</title>
-    <link rel="stylesheet" href="Estilos/Inicio.css?=v4">
+    <link rel="stylesheet" href="./Estilos/Inicio.css?=v3">
 
 </head>
 <body>
     <header>
         <div class="topbar">
-            <a href="index.html"><img src="https://upqroo.edu.mx/wp-content/uploads/2020/11/2UPQROO-logo.png" alt="Logo UPQROO"></a>
+            <a href="index.html"><img src="https://upqroo.edu.mx/wp-content/uploads/2020/11/2UPQROO-logo.png" alt="Logo UPQROO" class="logoo"></a>
             <nav class="menu">
-                <a href="IniciarSesion.html">Inicio</a>
-                <a href="Inscripcion.html">Servicios</a>
-                <a href="Deportes.html">Extraescolares</a>
+                <a href="IniciarSesion.html">Inicio Sesión</a>
+                <a href="Inscripcion.html">Inscripción</a>
+                <a href="Deportes.html">Horarios</a>
             </nav>
         </div>
     </header>
@@ -26,7 +26,7 @@
             <p class="parrafo">Esta plataforma permite a alumnos, profesores y coordinadores gestionar eficientemente las actividades extraescolares. <br> Consulta avisos,  registra asistencias y mantente al día con tus compromisos académicos fuera del aula.
 </p>
         </div>
-        <img src="Imagenes/EquipoDeportes.png" width="450px">
+        <img src="Imagenes/19.jpg" width="450px">
     </div>
     <div class="tema">
         <h1 >Actividades que transforman</h1>
@@ -67,10 +67,19 @@
             <h2>Lista de extraescolares</h2>
             <a href="Inscripcion.html"><button>Inscribete Ahora</button></a>
         </div>
-        <div class="relleno1-2"></div>
+        <div class="carrusel">
+    <div class="slides">
+        <img src="Imagenes/1.jpg" alt="1">
+        <img src="Imagenes/7.jpg" alt="2">
+        <img src="Imagenes/3.jpg" alt="3">
+        <img src="Imagenes/10.jpg" alt="4">
+        <img src="Imagenes/13.jpg" alt="5">
     </div>
-    <div class="relleno2">
-        <a href="#"><button>All Job Openings</button></a>
+    <button class="flecha prev">&#10094;</button>
+    <button class="flecha next">&#10095;</button>
+    <div class="miniaturas"></div>
+</div>
+        
     </div>
     <div class="tema4">
         <div>
@@ -83,22 +92,74 @@
             <a href="Deportes.html"><button>Visitar Horarios</button></a>
         </div>
         <div>
-            <img src="Imagenes/EquipoDeportes.png" width="950px" height="408px">
+            <img src="https://upqroo.edu.mx/wp-content/uploads/2025/06/488620550_1188538496397967_3168604482414187794_n-1-900x600.jpg" width="950px" height="408px">
         </div>
     </div>
-    <div class="relleno3"></div>
+    
+
+<div class="miniaturas"></div>
     <div class="relleno4">
-        <h1>¿Aun</h1>
-        <h1>Tienes</h1>
-    </div>
-    <div class="relleno5">
-        <h1>Preguntas?</h1>
-    </div>
-    <div class="tema6">
-        <div>
-            <p>Consulta nuestras preguntas frecuentes para conocer mejor cómo funcionan las actividades extraescolares, cómo participar, colaborar o inscribirte. También encontrarás información útil sobre convocatorias, requisitos y mucho más.</p>
-            <a href="FAQ.html"><button>Preguntas Frecuentes</button></a>
-        </div>
-    </div>
+    <h1>¿Aun Tienes Preguntas?</h1>
+    
+</div>
+<div class="tema6">
+  <div class="contenido-preguntas">
+    <a href="FAQ.html" class="btn-preguntas">Preguntas Frecuentes</a>
+    <p>
+      Consulta nuestras preguntas frecuentes para conocer mejor cómo funcionan las actividades extraescolares, cómo participar, colaborar o inscribirte. También encontrarás información útil sobre convocatorias, requisitos y mucho más.
+    </p>
+  </div>
+<script>
+    const slides = document.querySelector('.slides');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+    const images = Array.from(document.querySelectorAll('.slides img'));
+    const total = images.length;
+    const miniaturasDiv = document.querySelector('.miniaturas');
+    let index = 0;
+    let intervalo;
+
+    function mostrarSlide(i) {
+        index = (i + total) % total;
+        slides.style.transform = `translateX(${-index * 100}%)`;
+        actualizarMiniaturas();
+    }
+
+    function actualizarMiniaturas() {
+        miniaturasDiv.innerHTML = "";
+        for (let j = 1; j <= 3; j++) {
+            const siguienteIndex = (index + j) % total;
+            const img = document.createElement('img');
+            img.src = images[siguienteIndex].src;
+            miniaturasDiv.appendChild(img);
+        }
+    }
+
+    function siguiente() {
+        mostrarSlide(index + 1);
+    }
+    function anterior() {
+        mostrarSlide(index - 1);
+    }
+
+    prevBtn.addEventListener('click', anterior);
+    nextBtn.addEventListener('click', siguiente);
+
+    function autoplay() {
+        intervalo = setInterval(siguiente, 3000); // cada 3 segundos
+    }
+    function detenerAuto() {
+        clearInterval(intervalo);
+    }
+
+    // Detener cuando el mouse entra y reanudar cuando sale
+    document.querySelector('.carrusel').addEventListener('mouseenter', detenerAuto);
+    document.querySelector('.carrusel').addEventListener('mouseleave', autoplay);
+
+    mostrarSlide(index);
+    autoplay(); // Iniciar autoplay
+</script>
+<button id="btnSubir" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
+
 </body>
 </html>

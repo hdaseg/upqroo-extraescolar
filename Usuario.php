@@ -26,7 +26,7 @@ $datos3 = mysqli_fetch_assoc($query3);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil de Usuario</title>
-    <link rel="stylesheet" href="./Estilos/usuario.css?=v2">
+    <link rel="stylesheet" href="./Estilos/usuario.css?=v3">
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const modal = document.getElementById("modalCambiarPass");
@@ -53,12 +53,12 @@ document.addEventListener("DOMContentLoaded", () => {
 <body>
   <div class="contenedor">
     <header class="encabezado">
-      <img src="https://upqroo.edu.mx/wp-content/uploads/2020/11/2UPQROO-logo.png" alt="Logo UPQROO" class="logo-upqroo">
+      <a href="index.html"><img src="https://upqroo.edu.mx/wp-content/uploads/2020/11/2UPQROO-logo.png" alt="Logo UPQROO" class="logo-upqroo"></a>
       <div class="iconos">
         <div class="menu-navegacion">
         <a href="index.html">Inicio</a>
-        <a href="inscripcion.html">Servicios</a>
-        <a href="deportes.html">Extraescolares</a>  
+        <a href="inscripcion.html">Inscribirse</a>
+        <a href="deportes.html">Horarios</a>  
         </div>
       </div>
     </header>

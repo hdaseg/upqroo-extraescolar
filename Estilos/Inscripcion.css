@@ -126,6 +126,7 @@ main > div > a:hover {
 
 .swiper {
   width: 100%;
+  height: 100%;
 }
 
 .swiper-pagination-bullet,
@@ -139,7 +140,7 @@ main > div > a:hover {
 
 .swiper-slide {
   width: 18.75rem;
-  height: 28.125rem;
+  height: 38.125rem;
   display: flex;
   flex-direction: column;
   justify-content: end;

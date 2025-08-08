@@ -19,28 +19,29 @@ $datos2 = mysqli_fetch_assoc($query2);
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Panel del Profesor - Extraescolares</title>
-  <link rel="stylesheet" href="./Estilos/maestro.css?=v1">
+  <link rel="stylesheet" href="./Estilos/maestro.css?=v5">
 </head>
 <body>
-  <header class="barra-superior">
-    <div class="contenedor-barra">
-      <a href="index.html"><img src="https://upqroo.edu.mx/wp-content/uploads/2020/11/2UPQROO-logo.png" alt="Logo UPQROO" class="logo"></a>
-      <nav class="menu-navegacion">
-        <a href="index.html">Inicio</a>
-        <a href="inscripcion.html">Servicios</a>
-        <a href="deportes.html">Extraescolares</a>
-      </nav>
-    </div>
-  </header>
+  
+    <header>
+        <div class="topbar">
+            <a href="index.html"><img src="https://upqroo.edu.mx/wp-content/uploads/2020/11/2UPQROO-logo.png" alt="Logo UPQROO" class="logoo"></a>
+            <nav class="menu">
+                <a href="IniciarSesion.html">Inicio Sesión</a>
+                <a href="Inscripcion.html">Inscripción</a>
+                <a href="Deportes.html">Horarios</a>
+            </nav>
+        </div>
+    </header>
 
   <main class="contenido">
     <header class="encabezado">
       <h1>Panel del Profesor <?php echo $datos['nombre']?> <?php echo $datos['apellidoP']?> <?php echo $datos['apellidoM']?></h1>
-      <div class="usuario">PROFESOR</div>
+      <a class="usuario" href="contraMaestro.php">PROFESOR</a>
     </header>
 
     <section class="seccion-control">
-      <div class="tarjeta grande fondo-imagen">
+      <div class="tarjeta larga fondo-imagen">
         <h2>Control de Clases y Actividades <?php echo $datos2['Nombre']?></h2>
         <p>Gestiona tus clases, horarios, y comunicados aquí.</p>
       </div>
@@ -65,7 +66,6 @@ $datos2 = mysqli_fetch_assoc($query2);
                 <button class="btn" type="submit">Enviar Aviso</button>
             </div>
         </form>
-
       <div class="tarjeta mediana fondo-vino">
         <h3>Subir Actividad</h3>
         <form action="actividad.php" method="POST">
@@ -107,6 +107,8 @@ $datos2 = mysqli_fetch_assoc($query2);
           <input type="text" placeholder="Ej. 10:30AM-12:30PM" name="hora">
           <button type="submit" class="btn">Cambiar horario</button>
         </form>
+      </div>
+        <div class="tarjeta larga fondo-imagen2">
       </div>
     </section>
   </main>

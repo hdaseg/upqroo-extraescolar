@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Roboto:wght@300;400;500;900&display=swap");
+
 body{
     margin: auto;
     background-color: white;
@@ -54,7 +55,6 @@ body{
 }
 .texto-principal h1{
     margin: 0;
-    font-size: 40px;
     font-size: 70px;
     color: #ff6400;
 }
@@ -77,7 +77,6 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    gap: 0px;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
     width: 100%;
@@ -89,7 +88,6 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    gap: 0px;
     width: 100%;
     height: 334px;  
 }
@@ -103,9 +101,7 @@ body{
     align-items: end;
     background-color: #ff6400;
     padding: 40px;
-    border-color: black;
-    border-style: solid;
-    border-width: 1px;
+    border: 1px solid black;
 }
 .tema2-2{
     text-decoration: none;
@@ -116,10 +112,8 @@ body{
     justify-content: flex-start;
     background-color: #ff8f00;
     padding: 40px;
-    border-color: black;
-    border-style: solid;
-    border-width: 1px;
-    border-left-width: 0px;
+    border: 1px solid black;
+    border-left-width: 0;
 }
 .tema2-3{
     text-decoration: none;
@@ -130,19 +124,11 @@ body{
     justify-content: flex-start;
     padding: 40px;
     background-color: #FF6600;
-    border-color: black;
-    border-style: solid;
-    border-width: 1px;
-    border-left-width: 0px;
+    border: 1px solid black;
+    border-left-width: 0;
 }
-.tema2-1:hover{
-    background-color: white;
-    color: black;
-}
-.tema2-2:hover{
-    background-color: white;
-    color: black;
-}
+.tema2-1:hover,
+.tema2-2:hover,
 .tema2-3:hover{
     background-color: white;
     color: black;
@@ -175,10 +161,7 @@ body{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    border-color: #05002b;
-    border-style: solid;
-    border-width: 0;
-    border-bottom-width: 1px;
+    border-bottom: 1px solid #05002b;
 }
 .tema3 h1{
     font-size: 120px;
@@ -186,15 +169,13 @@ body{
 }
 .relleno1{
     background-color: white;
-    height: 303px;
+    height: 550px;
     display: flex;
 }
 .relleno1-1{
-    width: 33%;
-    border-color: #05002b;
-    border-width: 1px;
-    border-top-width: 0px;
-    border-style: solid;
+    width: 35%;
+    border: 1px solid #05002b;
+    border-top-width: 0;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -248,9 +229,7 @@ body{
     display: flex;
     justify-content: start;
     height: 442px;
-    border-style: solid;
-    border-color: #05002b;
-    border-width: 1px;
+    border: 1px solid #05002b;
 }
 .tema4 div{
     display: flex;
@@ -279,7 +258,7 @@ body{
 }
 .tema5-1 p{
     text-align: center;
-    font-size: 20px;
+    font-size: 30px;
 }
 .tema5-1 button{
     color: white;
@@ -298,59 +277,76 @@ body{
 .relleno3{
     height: 270px;
     background-color: white;  
-    border-style: solid;
-    border-width: 0;
-    border-top-width: 1px;
-    border-bottom-width: 1px;  
+    border-top: 1px solid;
+    border-bottom: 1px solid;  
 }
 .relleno4{
     font-size: 50px;
     height: 208px;
     background-color: white;
-    border-style: solid;
-    border-width: 0;
-    border-bottom-width: 1px;
+    border-bottom: 1px solid;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 }
 .relleno5{
-    font-size: 50px;
-    height: 208px;
+    display: none;
+}
+
+
+.tema6 {
     background-color: white;
-    border-style: solid;
-    border-width: 0;
-    border-bottom-width: 1px;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
 }
-.tema6{
-    height: 392px;
-    background-color: white;
+
+.contenido-preguntas {
+    font-size: 25px;
     display: flex;
     align-items: center;
-    justify-content: end;
-    font-size: 20px;
+    gap: 40px;             
+    width: min(1100px, 90%); 
+    justify-content: justify;
 }
-.tema6 div{
-    width: 500px;
-    margin-right: 400px;
-}
-.tema6 div a button{
-    color: #05002b;
-    font-size: 23px;
-    width: 229px;
-    height: 65px;
+
+.btn-preguntas {
+    flex: 0 0 auto; 
+    padding: 14px 36px;
+    font-size: 25px;
     background-color: #ff8f00;
-    border: 0;
+    color: #05002b;
     border-radius: 100px;
+    text-decoration: none;
+    transition: background-color .2s ease, color .2s ease;
+    white-space: nowrap;
 }
-.tema6 div a button:hover{
+
+.contenido-preguntas p {
+    margin: 0;
+    flex: 1 1 650px;         
+    max-width: 720px;
+    text-align: left;        
+    line-height: 1.5;
+}
+
+
+.btn-preguntas:hover {
     background-color: #4b0000;
     color: white;
-    cursor: pointer;
 }
+
+@media (max-width: 900px) {
+    .contenido-preguntas {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    .contenido-preguntas p { max-width: 100%; }
+}
+
+
 footer{
     height: 412px;
     background-color: #05002b;
@@ -368,4 +364,72 @@ footer div{
     color: white;
 }
 
+.carrusel {
+    width: 100%;
+    max-width: 1000px;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    margin: 20px auto;
+}
 
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+.slides img {
+    flex-shrink: 0;
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+
+
+.flecha {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 50%;
+    user-select: none;
+    z-index: 10;
+}
+
+.flecha:hover {
+    background: rgba(0,0,0,0.8);
+}
+
+.prev { left: 15px; }
+.next { right: 15px; }
+#btnSubir {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #FF6600;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 70%;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease;
+  z-index: 10000;
+}
+
+#btnSubir:hover {
+  background-color: #e55a00;
+}
