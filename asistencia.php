@@ -2,7 +2,7 @@
 include("Conexion.php");
 session_start();
 $id = $_SESSION["id"];
-
+$hoy = date('Y-m-d');
 $query = mysqli_query($conn, "SELECT * FROM profesores WHERE id = $id");
 $datos = mysqli_fetch_assoc($query);
 $extra = $datos['id_extraescolar'];
@@ -15,7 +15,7 @@ $query2 = mysqli_query($conn, "SELECT * FROM alumnos WHERE id_extraescolar = $ex
 <head>
   <meta charset="UTF-8">
   <title>Gestión de Asistencias</title>
-  <link rel="stylesheet" href="./Estilos/asistencias.css?=v1">
+  <link rel="stylesheet" href="./Estilos/asistencias.css?=v2">
 </head>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
@@ -30,14 +30,19 @@ $query2 = mysqli_query($conn, "SELECT * FROM alumnos WHERE id_extraescolar = $ex
         if (value === "ausente") select.classList.add("ausente");
         if (value === "justificado") select.classList.add("justificado");
       };
-
-      // Inicializar color al cargar
       updateColor();
-
-      // Actualizar color al cambiar
       select.addEventListener("change", updateColor);
     });
   });
+
+function cambiarTodos(valor) {
+  const selects = document.querySelectorAll("select[name^='asistencia']");
+  selects.forEach(select => {
+    select.value = valor;
+    select.dispatchEvent(new Event("change"));
+  });
+}
+
 </script>
 
 <body>
@@ -54,19 +59,25 @@ $query2 = mysqli_query($conn, "SELECT * FROM alumnos WHERE id_extraescolar = $ex
 
   <main class="contenido">
     <header class="encabezado">
-      <h1>Gestión de Asistencias</h1>
+      <h1>Gestión de Asistencias <?php echo $hoy ?></h1>
       <div class="usuario">PROFESOR</div>
     </header>
 
     <section class="panel-asistencias">
       <div class="tabla-asistencia">
         <form action="guardarAsistencia.php" method="POST">
+        <div class="acciones-masivas">
+          <button type="button" onclick="cambiarTodos('Presente')">Todos Presente</button>
+          <button type="button" onclick="cambiarTodos('Ausente')">Todos Ausente</button>
+          <button type="button" onclick="cambiarTodos('Justificado')">Todos Justificado</button>
+        </div>
           <table>
             <thead>
               <tr>
                 <th>MATRÍCULA</th>
                 <th>Nombre del Alumno</th>
                 <th>Asistencia</th>
+                <th>Asistencias y Faltas</th>
               </tr>
             </thead>
             <tbody>
@@ -74,6 +85,8 @@ $query2 = mysqli_query($conn, "SELECT * FROM alumnos WHERE id_extraescolar = $ex
               while ($row = mysqli_fetch_assoc($query2)) {
                   $matricula = $row["Matricula"];
                   $nombreCompleto = $row["Nombre"] . ' ' . $row["ApellidoP"] . ' ' . $row["ApellidoM"];
+                  $asistencia = $row["asistencia"];
+                  $falta = $row["falta"];
                   echo "
                   <tr>
                       <td>$matricula</td>
@@ -84,6 +97,10 @@ $query2 = mysqli_query($conn, "SELECT * FROM alumnos WHERE id_extraescolar = $ex
                             <option value='Ausente'>Ausente</option>
                             <option value='Justificado'>Justificado</option>
                           </select>
+                      </td>
+                      <td>
+                        Asistencias: $asistencia
+                        Faltas: $falta
                       </td>
                   </tr>";
               }

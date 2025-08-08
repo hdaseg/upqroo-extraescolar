@@ -36,6 +36,8 @@ if ($query && mysqli_num_rows($query) == 1) {
         }
     }
     exit;
+}else {
+    header("Location: IniciarSesion.html?error=1");  
 }
 
 $conn->close();

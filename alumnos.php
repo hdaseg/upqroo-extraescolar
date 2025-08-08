@@ -26,7 +26,7 @@ $result = mysqli_query($conn, "SELECT * FROM horarios WHERE id = $extra");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Extraescolares-Upqroo</title>
-    <link rel="stylesheet" href="./Estilos/alumnos.css?=v1">
+    <link rel="stylesheet" href="./Estilos/alumnos.css?=v2">
     <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -51,15 +51,8 @@ $result = mysqli_query($conn, "SELECT * FROM horarios WHERE id = $extra");
       <section class="tarjetas">
 
         <div class="tarjeta grande fondo-imagen">
-          <h2>Haz clic para búsqueda rápida</h2>
+          <h2>Bienvenido a tu extraescolar</h2>
           <p>Más información sobre Pages</p>
-        </div>
-
-        <div class="tarjeta mediana fondo-naranja">
-          <div class="etiqueta">NOTICIA</div>
-          <br>
-          <p>Holaaa</p>
-            <br>
         </div>
 
         <div class="tarjeta mediana fondo-naranja">
@@ -103,13 +96,6 @@ $result = mysqli_query($conn, "SELECT * FROM horarios WHERE id = $extra");
             <br>
         </div>
         <div class="tarjeta mediana fondo-naranja">
-          <h3>Asistencia</h3>
-          <p>75% de clases asistidas</p>
-          <div class="barra-progreso">
-            <div class="progreso" style="width: 75%;"></div>
-          </div>
-        </div>
-        <div class="tarjeta mediana fondo-naranja">
           <h3>Actividad</h3>
           <ul>
             <li><?php echo $datos2['fecha_act']?> <?php echo $datos2['actividad']?></li>
@@ -122,8 +108,5 @@ $result = mysqli_query($conn, "SELECT * FROM horarios WHERE id = $extra");
       </section>
     </main>
   </div>
-  <footer>
-    Universidad Politécnica de Quintana Roo 2025 | Departamento de Cultura y Deporte
-  </footer>
 </body>
 </html>

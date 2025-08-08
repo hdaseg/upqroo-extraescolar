@@ -1,6 +1,7 @@
 <?php
 include("Conexion.php");
 session_start();
+$hoy = date('Y-m-d');
 $id = $_SESSION["id"];
 $extraescolar = $_SESSION["extraescolar"];
 
@@ -123,11 +124,16 @@ if($query){
                                 <option value="Vespertino" <?php if($datos['Turno'] == 'Vespertino') echo 'selected'; ?>>Vespertino</option>
                             </select>
                         </div>
-
                         <div class="input-field">
                             <label>Fecha de inscripción</label>
-                            <input type="date" placeholder="Igresa la fecha actual" name="Fecha" value="<?php echo($datos['Fecha']); ?>" required>
+                            <input type="date" 
+                                name="Fecha" 
+                                value="<?php echo $hoy; ?>" 
+                                min="<?php echo $hoy; ?>" 
+                                max="<?php echo $hoy; ?>" 
+                                required>
                         </div>
+
 
                         <div class="input-field">
                             <label>Condiciones Médicas?</label>
